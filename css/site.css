@@ -1,18 +1,31 @@
+/* Logo Font */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 /* Set up your color variable scheme */
 :root {
-    --primary-color: #1d5888;
-    --secondary-color: #ff993b;
+    --primary-color: #ff993b;
+    --secondary-color: #fff23b;
     --dark-color: #292929;
     --white-color: #dff3e4;
 }
 
-body {color: var(--dark-color);}
+body {
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: var(--dark-color);
+}
 
 nav {background-color:var(--dark-color);}
 
 footer{background-color:var(--dark-color);}
 
-h1,h2,h3,h4,h5,h6 {color: var(--primary-color);}
+h1,h2,h3,h4,h5,h6,li {color: var(--primary-color);}
 
 footer {
     padding-right: 1rem;
@@ -25,22 +38,7 @@ footer .social>a{
 
 footer .social>a:hover {
     opacity: 0.9;
-    color: var(--secondary-color);
-}
-
-.bsicon{
-    color: purple;
-}
-.jsicon{
-    color: yellow;
-}
-
-.html5icon{
-    color: orangered;
-}
-
-.cssicon {
-    color: blue;
+    color: var(--primary-color);
 }
 
 .checklist>li i {
@@ -59,6 +57,12 @@ main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
 }
+
+.logoStyle{
+    color: var(--primary-color);
+    font-family: 'Monoton', cursive;
+}
+
 .sticky-footer {
     position: sticky;
     left: 0;
