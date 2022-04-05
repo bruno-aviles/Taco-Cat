@@ -3,7 +3,7 @@
 
 <head>
     <!-- Change 'App Name' for every project -->
-    <title>App Name: A Coding Project By Bruno Aviles</title>
+    <title>Taco Cat: A Coding Project By Bruno Aviles</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/site.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon_io/site.webmanifest">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8a7b6b0a99.js" crossorigin="anonymous"></script>
@@ -26,7 +29,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
         <div class="container-fluid">
             <!-- Change 'APP NAME' to your brand name -->
-            <a class="navbar-brand" href="#"><img src="/img/Favicon_Brand-White.svg" width="30">APP NAME</a>
+            <a class="navbar-brand" href="#"><span class="logoStyle">Tac-O-Cat</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,7 +40,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"  href="app.html">The App</a>
+                        <a class="nav-link active text-warning" aria-current="page"  href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="code.html">The Code</a>
@@ -58,7 +61,47 @@
     <!-- MAIN -->
     <main class="flex-shrink-0">
         <div class="container">
-
+            <div class="row row-cols-1 row-cols-md-2 mt-3 p-2">
+                <!-- Description -->
+                <div class="col border-end border-warning">
+                    <h1 class="display-5 logoStyle">Tac-O-Cat</h1>
+                    <h4 class="lead text-warning">Taco Cat is a palindrome. A palindrome is a word, phrase, or sequence that reads the same backwards as forward. Write a program that checks if the phrase entered is a palindrome.</h4>
+                    <!-- Instructions -->
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h1 class="display-5">Instructions</h1>
+                            <p class="lead text-warning">Enter a word or phrase in the input field to check if your word or phrase is a palindrome.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- App -->
+                <div class="col p-3">
+                    <p class="lead text-warning fw-bold">Enter a Word, Sentence, or Phrase</p>
+                    <form class="row g-3 gy-4">
+                        <input class="form-control" id="userInput" placeholder="Type Here">
+                        <button class="btn btn-warning btn-lg">Submit</button>
+                    </form>
+                    <!-- Results -->
+                    <h3 class="mt-4">Results</h3>
+                    <div class="alert alert-warning">
+                        <!-- Text Will Be Displayed Here -->
+                        <h3 id="alertDisplay" class="text-center">
+                            <!-- Success! -->
+                            <!-- Sorry... -->
+                            Success!
+                        </h3>
+                        <p id="msgDisplay" class="lead fw-normal text-dark text-center">
+                            <!-- Your Palindrome is: -->
+                            <!-- Your Input Is Not A Palindrome -->
+                            Your palindrome is:
+                        </p>
+                        <p id="resultDisplay" class="lead fw-bold text-dark text-center">
+                            <!-- Palindrome Word -->
+                            tacocat
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>    
     </main>
 
@@ -69,14 +112,11 @@
                 <!-- copyright -->
                 <div class="col d-flex align-items-center justify-content-center justify-content-md-start order-last order-sm-first text-light">
                     <div>
-                        <span class="text-muted">&copy;2022</span> Bruno Aviles | bruno.aviles@yahoo.com
+                        <span class="text-muted">&copy;2022</span> Bruno Aviles | <span style="color: orange;">bruno.aviles@yahoo.com</span>
                     </div>
                 </div>
                 <!-- logo -->
-                <div class="col d-flex align-items-center justify-content-center">
-                    <img src="/img/portfolioLogoWhite.svg" alt="" height="33">
-                    <!-- <div class="text-light">BrunoAviles</div> -->
-                </div>
+                <div class="col d-flex align-items-center justify-content-center"></div>
                 <!-- social media links -->
                 <div class="col d-flex align-items-center justify-content-center justify-content-md-end">
                     <div class="row">
