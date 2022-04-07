@@ -4,7 +4,6 @@ function getValues(){
     
     let userText = document.getElementById("userInput").value;
     let onlyText = removeSpecialCharacters(userText);
-    // let validateText = verifyInput(onlyText);
 
     verifyInput(onlyText);
 }
@@ -32,7 +31,7 @@ function verifyInput(validate){
     for(i = (validate.length - 1); i >= 0; i--){
         reverse += validate[i];
     }
-    // alert("word in reverse: " + reverse);
+    
     if(validate == reverse){
         alertDisplay.innerHTML = "Success!";
         msgDisplay.innerHTML = "Your Palindrome is:";

@@ -3,7 +3,7 @@
 
 <head>
     <!-- Change 'App Name' for every project -->
-    <title>App Name: A Coding Project By Bruno Aviles</title>
+    <title>Taco Cat: A Coding Project By Bruno Aviles</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,10 @@
     <!-- CSS Prism -->
     <link rel="stylesheet" href="/css/prism.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon_io/site.webmanifest">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8a7b6b0a99.js" crossorigin="anonymous"></script>
@@ -28,7 +31,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
         <div class="container-fluid">
             <!-- Change 'APP NAME' to your brand name -->
-            <a class="navbar-brand" href="#"><img src="/img/favicon.ico" class="d-inline-block align-text-top" width="30" height="24"> APP NAME</a>
+            <a class="navbar-brand" href="index.html"><span class="logoStyle">Tac-O-Cat</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,13 +39,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
+                        <a class="nav-link active text-warning" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
                         <!-- Link this to your portfolio -->
@@ -60,25 +63,77 @@
     <!-- MAIN -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5">
-            <h2 class="border-1 border-bottom border-dark mt-5">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark mt-5"><span class="logoStyle">CODE</span></h2>
             <div class="row row-cols-1 row-cols-md-2">
                 <!-- Code Embedded -->
                 <div class="col-lg-8">
                     <!-- Insert App Project Code -->
                     <pre class="line-numbers">
                     <code class="language-javascript">
-                        // Call Hello World 
-                        function HelloWorld(){ 
-                            alert("hello world"); 
+                        // get user input
+                        function getValues(){
+                            document.getElementById("displayBox").classList.add("invisible");
+                            
+                            let userText = document.getElementById("userInput").value;
+                            let onlyText = removeSpecialCharacters(userText);
+
+                            verifyInput(onlyText);
+                        }
+
+                        // remove any special characters
+                        function removeSpecialCharacters(text){
+                            let lettersOnly = "";
+                            for(i = 0;i < text.length; i++){
+                                // special characters
+                                let specialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~ ]/;
+
+                                if(specialChar.test(text[i]) == true) {
+                                    lettersOnly += "";
+                                } else {
+                                    lettersOnly += text[i];
+                                }
+                            }
+                            return lettersOnly;
+                        }
+
+                        // verify if word, phrase, sequence is a palindrome
+                        function verifyInput(validate){
+                            let reverse = "";
+                            // arrange the text reading backwards
+                            for(i = (validate.length - 1); i >= 0; i--){
+                                reverse += validate[i];
+                            }
+                            
+                            if(validate == reverse){
+                                alertDisplay.innerHTML = "Success!";
+                                msgDisplay.innerHTML = "Your Palindrome is:";
+                                resultDisplay.innerHTML = `${validate} = ${reverse}`;
+                            
+                                displayBox.classList.remove("invisible");
+                            } else {
+                                alertDisplay.innerHTML = "Sorry...";
+                                msgDisplay.innerHTML = "Your Input Is Not A Palindrome";
+                                resultDisplay.innerHTML = `${validate} = ${reverse}`;
+
+                                displayBox.classList.remove("invisible");
+                            }
                         }
                     </code>
                     </pre>
                 </div>
                 <!-- Description of Code -->
                 <div class="col-lg-4">
-                    <p>The Code is Structures in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p class="lead fw-normal text-warning">The code is structured in three function</p>
+                    
+                    <h3>getValues</h3>
+                    <p class="text-warning"><span class="fw-bold text-danger">getValues</span> function obtain(gets) the value from the input field and is stored in variable (userText). Variable (userText) is then passed through function <span class="fw-bold text-danger">removeSpecialCharacters</span> that is stored in a variable called (onlyText). Variable (onlyText) will then be passed through function <span class="fw-bold text-danger">verifyInput</span> to display if the input value is a palindrome. Display for the "displayBox" container is set to "invisible".</p>
+                    
+                    <h3>removeSpecialCharacters</h3>
+                    <p class="text-warning">Function <span class="text-danger fw-bold">removeSpecialCharacters</span> uses the "text" parameter value and iterates "text" to check if any special characters are within. By using the variable (specialChar) to compare the "text" parameter, If there are any characters from (specialChar) that is in "text", then it will be removed from "text". For every iteration, the alphabetical letters from "text" will be stored in variable (lettersOnly). Once the the iteration is finished, function <span class="text-danger fw-bold">removeSpecialCharacters</span> will return variable (lettersOnly).</p>
+                    
+                    <h3>verifyInput</h3>
+                    <p class="text-warning"> <span class="fw-bold text-danger">verifyInput</span> function uses "validate" parameter value to verify if "validate" is a palindrome. "validate" goes through a for loop starting from the last letter of the string and iterating backwards to the first letter of the string and stores each letter into variable (reverse).</p>
+                    <p class="text-warning">variable (reverse) is compared with "validate". If both (reverse) and "validate" are the same input, then an alert container will be displayed letting the client know that the input is a palindrome. If variable (reverse) and "validate" are not the same input, then an alert container will be displayed letting the client know that the input is not a palindrome. Both outputs will remove the class "invisible" to display the "displayBox".</p>
                 </div>
             </div>
         </div>
@@ -91,7 +146,7 @@
                 <!-- copyright -->
                 <div class="col d-flex align-items-center justify-content-center justify-content-md-start order-last order-sm-first text-light">
                     <div>
-                        <span class="text-muted">&copy;2022</span> Bruno Aviles | bruno.aviles@yahoo.com
+                        <span class="text-muted">&copy;2022</span> Bruno Aviles | <span style="color: orange;">bruno.aviles@yahoo.com</span>
                     </div>
                 </div>
                 <!-- logo -->
